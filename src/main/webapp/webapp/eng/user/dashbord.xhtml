@@ -1,0 +1,277 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html
+ xmlns:faces="jakarta.faces"
+        xmlns:ui="jakarta.faces.facelets"
+        xmlns:f="jakarta.faces.core"
+        xmlns:h="jakarta.faces.html"
+        xmlns:c="jakarta.tags.core"
+        xmlns:fn="jakarta.tags.functions"
+        xmlns:p="http://primefaces.org/ui"
+  	 > 
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="/JSFjack/static/css/style.css"></link> 
+	<meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
+    
+</h:head> 
+
+<h:body>
+	<div class="dashbord-container">
+		<!-- Side barre -->
+		<div class="side-bar">
+			<div class="bar-inner shadow">
+				<div class="bar-outer ">
+					<div class="bar-content">
+						<div class="logo-container">
+							<i class="pi pi-sign-out"></i>
+						</div>
+						<div class="menu-container">
+							<a href="/eng/dashbord.xhtml">	
+								<i class="pi pi-home"></i>
+							</a>
+							<a href="meals.xhtml">	
+								<i class="pi pi-list"></i>
+							</a>
+							
+							<a href="exercice.xhtml">	
+								<i class="pi pi-sort-amount-up-alt"></i>
+							</a>
+							
+							<a href="user.xhtml">	
+								<i class="pi pi-user"></i>
+							</a>
+							
+							
+							
+						</div>
+					
+						<h:form class="logout-container">
+							 <p:commandButton action="#{user.submitLogout}" icon="pi pi-sign-out" styleClass="rounded-button ui-button-secondary ui-button-flat" />
+						</h:form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end side barre -->	
+		
+		<!-- top navbar -->
+		<div class="dashbord-navbar">
+			<div class="d-flex justify-content-between">
+				<div class="">
+					<h1>
+						Hello #{user.nom} #{user.prenom} ,
+					</h1>
+					
+					<p class="fs-5 fw-medium text-secondary">
+						Lets start living healthy from now on !
+					</p>
+				</div>
+				<div class="">
+					<span class="currente-date text-center fs-4 fw-medium"></span>
+					<p class="fs-5 fw-medium text-secondary">
+						Remaining days : #{user.remainingDates}
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- end top navbar -->
+		
+		<!-- dashbord items -->
+		<div class="main-dashbord pb-4">	
+			<!-- first line -->
+			
+			
+			<!-- second line -->
+			<div class="objectif-dashbord shadow rounded bg-light px-4">
+				<div class="my-3 d-flex flex-column justify-content-between" style="height:90%;">
+					<div>
+						<!-- breakfast -->
+						<div class="meal-container d-flex justify-content-between my-2" style="align-items:baseline">
+							<div class="fs-3 fw-bolder">Breakfast</div>
+							<div class="fs-4 fw-medium text-secondary d-flex justify-content-center align-items-center">240kcal
+								<i class="pi pi-angle-up" style="font-size:1.5rem; color:green"></i>
+							</div>
+						</div>
+						
+						<!-- lunch -->
+						<div class="meal-container d-flex justify-content-between my-2" style="align-items:baseline">
+							<div class="fs-3 fw-bolder">Lunch</div>
+							<div class="fs-4 fw-medium text-secondary d-flex justify-content-center align-items-center">240kcal
+								<i class="pi pi-angle-up" style="font-size:1.5rem; color:green"></i>
+							</div>
+						</div>
+						
+						<!-- dinner -->
+						<div class="meal-container d-flex justify-content-between my-2" style="align-items:baseline">
+							<div class="fs-3 fw-bolder">Dinner</div>
+							<div class="fs-4 fw-medium text-secondary d-flex justify-content-center align-items-center">240kcal
+								<i class="pi pi-angle-up" style="font-size:1.5rem; color:green"></i>
+							</div>
+						</div>
+						<!-- exercices -->
+						<div class="meal-container d-flex justify-content-between my-2" style="align-items:baseline">
+							<div class="fs-3 fw-bolder">Burned</div>
+							<div class="fs-4 fw-medium text-secondary d-flex justify-content-center align-items-center">240kcal
+								<i class="pi pi-angle-down" style="font-size:1.5rem; color:red"></i>
+							</div>
+						</div>	
+						
+						<!-- buttons -->
+					</div>
+					<div>
+						<div class="add-meal my-2">
+							<a role="button" class="btn btn-outline-success" style="width:100%">Add meal</a>
+						</div>
+						
+						<div class="add-exercice my-2">
+							<a role="button" class="btn btn-outline-danger" style="width:100%">Add exercice</a>
+						</div>
+					</div>
+				
+				</div>
+				
+			</div>
+			
+			<!-- calendar -->
+			<div class="purpose-dashbord shadow rounded bg-light">
+				<div class="circulare-progress-barre d-flex justify-content-center align-items-center" style="height:100%;">
+					<div class="progress-barre-container">
+						<div class="progress-barre-outer" style="background:conic-gradient(#000 #{chartJsView.deg} , #c0c0c0 0deg );">
+							<div class="progress-barre-inner d-flex flex-column align-items-center justify-content-center">
+								<div class="fs-6 fw-bolder">
+									Amount of calories eaten: 
+								</div>
+								
+								<div class="fs-6 fw-medium text-secondary">
+									2700cal / 3700cal
+								</div>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+			
+			<!-- third line -->
+			<div class="calories-dashbord shadow rounded bg-light px-4">
+				<div class="d-flex flex-column justify-content-evenly" style="height:100%;">
+					<!-- carbohidrate -->	
+					<div class="daily-recap d-flex full-width align-items-between my-3" style="gap:30px;">
+						<div class="full-width">
+							<div class="calory-badge d-flex justify-content-center align-items-center fs-5 text-white fw-medium" style="#EEF296;">
+								54g
+							</div>
+						</div>
+						<div class="d-flex flex-column justify-content-evenly" style="width:100%">
+							<div class="d-flex full-width justify-content-between">
+								<span class="fs-6 text-secondary fw-medium">
+								Carbohydrate
+								</span>
+								<span class="fs-6 fw-bolder">
+									25%
+								</span>
+							</div>
+							<div class="progress-barre">
+								<div class="chart-inner">
+									<div class="chart-outer"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- protein -->	
+					<div class="daily-recap d-flex full-width align-items-between my-3" style="gap:30px;">
+						<div class="full-width">
+							<div class="calory-badge d-flex justify-content-center align-items-center fs-5 text-white fw-medium" style="background-color:#9ADE7B">
+								54g
+							</div>
+						</div>
+						<div class="d-flex flex-column justify-content-evenly" style="width:100%">
+							<div class="d-flex full-width justify-content-between">
+								<span class="fs-6 text-secondary fw-medium">
+								Protein
+								</span>
+								<span class="fs-6 fw-bolder">
+									25%
+								</span>
+							</div>
+							<div class="progress-barre">
+								<div class="chart-inner">
+									<div class="chart-outer"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- fats -->	
+					<div class="daily-recap d-flex full-width align-items-between my-3" style="gap:30px;">
+						<div class="full-width">
+							<div class="calory-badge d-flex justify-content-center align-items-center fs-5 text-white fw-medium" style="background-color:#508D69">
+								54g
+							</div>
+						</div>
+						<div class="d-flex flex-column justify-content-evenly" style="width:100%">
+							<div class="d-flex full-width justify-content-between">
+								<span class="fs-6 text-secondary fw-medium">
+								Fats
+								</span>
+								<span class="fs-6 fw-bolder">
+									25%
+								</span>
+							</div>
+							<div class="progress-barre">
+								<div class="chart-inner">
+									<div class="chart-outer"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+			</div>
+			<!-- water  -->
+			<div class="purpose-dashbord water-dashbord shadow rounded bg-light px-4">
+				<div class="my-3 circulare-progress-barre d-flex flex-column justify-content-center align-items-center" style="height:100%;">
+					<div class="progress-barre-container">
+						<div class="progress-barre-outer" style="background:conic-gradient(#000 #{chartJsView.deg} , #c0c0c0 0deg );">
+							<div class="progress-barre-inner d-flex flex-column align-items-center justify-content-center">
+								<div class="fs-6 fw-bolder">
+									Amount of water consumed : 
+								</div>
+								
+								<div class="fs-6 fw-medium text-secondary">
+									2l / 5l
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="my-5" style="width:100%">					
+						<div class="add-water my-2" style="width:100%">
+							<a role="button" class="btn btn-outline-info" style="width:100%">Add water</a>
+						</div>
+					</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+	
+	
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
+<script>
+	var currentDate = new Date();
+	
+	var currentYear = currentDate.getFullYear();
+	var currentMonth = currentDate.getMonth() + 1; 
+	var currentDay = currentDate.getDate();
+
+	var _currentDate = currentYear + "-" + currentMonth + "-" + currentDay;
+	document.querySelector(".currente-date").innerHTML = _currentDate
+	
+	
+</script>
+</h:body>
+
+
+</html>

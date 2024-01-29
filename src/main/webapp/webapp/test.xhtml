@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:faces="http://xmlns.jcp.org/jsf/core"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Website</title>
+    <!-- for icons  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css" />
+    <!-- bootstrap  href="/JSFjack/static/css/HomePage_style.css" -->
+    <link rel="stylesheet" href="/JSFjack/static/css/assets/css/bootstrap.min.css" />
+    <!-- for swiper slider  -->
+    <link rel="stylesheet" href="/JSFjack/static/css/assets/css/swiper.bundle.min.css" />
+
+    <!-- fancy box  -->
+    <link rel="stylesheet" href="/JSFjack/static/css/assets/css/bootstrap.min.css" />
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
+    
+    <!-- custom css  -->
+    <link rel="stylesheet" href="/JSFjack/static/css/assets/style.css" />
+</h:head>
+
+<h:body class="body-fixed">
+    <div id="viewport">
+        <div id="js-scroll-content">
+            <section class="our-menu section bg-light repeat-img" id="menu">
+                <div class="sec-wp">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="sec-title text-center mb-5">
+                                    <p class="sec-sub-title mb-3">our menu</p>
+                                    <h2 class="h2-title">wake up early, <span>eat fresh &amp; healthy</span></h2>
+                                    <div class="sec-title-shape mb-4">
+                                        <img src="/JSFjack/static/css/assets/images/title-shape.svg" alt="" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="menu-tab-wp">
+                            <div class="row">
+                                <div class="col-lg-12 m-auto">
+                                    <div class="menu-tab text-center">
+                                        <ul class="filters">
+                                            <div class="filter-active"></div>
+                                            <li class="filter" data-filter=".all, .breakfast, .lunch, .dinner">
+                                                <img src="/JSFjack/static/css/assets/images/menu-1.png" alt="" />
+                                                All
+                                            </li>
+                                            <li class="filter" data-filter=".breakfast">
+                                                <img src="/JSFjack/static/css/assets/images/menu-2.png" alt="" />
+                                                Breakfast
+                                            </li>
+                                            <li class="filter" data-filter=".lunch">
+                                                <img src="/JSFjack/static/css/assets/images/menu-3.png" alt="" />
+                                                Lunch
+                                            </li>
+                                            <li class="filter" data-filter=".dinner">
+                                                <img src="/JSFjack/static/css/assets/images/menu-4.png" alt="" />
+                                                Dinner
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="adding-meals-row">
+                            <ul>
+                                <li>
+                                    <p:commandButton class="dish-add-btn new-meal" value="Custom a new meal" action="#{bean.customMeal}" />
+                                </li>
+                                <li>
+                                    <p:commandButton class="dish-add-btn default-meal" value="Choose from our meals" action="#{bean.chooseMeal}" />
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="menu-list-row">
+                            <div class="row g-xxl-5 bydefault_show" id="menu-dish">
+                                <div class="col-lg-4 col-sm-6 dish-box-wp breakfast" data-cat="breakfast">
+                                    <div class="dish-box text-center">
+                                        <div class="dist-img">
+                                            <img src="/JSFjack/static/css/assets/images/dish/1.png" alt="" />
+                                        </div>
+                                        <div class="dish-title">
+                                            <h3 class="h3-title">Fresh Chicken Veggies</h3>
+                                            <p>120 calories</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 3 -->
+                                <div class="col-lg-4 col-sm-6 dish-box-wp lunch" data-cat="lunch">
+                                    <div class="dish-box text-center">
+                                        <div class="dist-img">
+                                            <img src="/JSFjack/static/css/assets/images/dish/3.png" alt="" />
+                                        </div>
+                                        <div class="dish-title">
+                                            <h3 class="h3-title">Panner Noodles</h3>
+                                            <p>100 calories</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 5 -->
+                                <div class="col-lg-4 col-sm-6 dish-box-wp dinner" data-cat="dinner">
+                                    <div class="dish-box text-center">
+                                        <div class="dist-img">
+                                            <img src="/JSFjack/static/css/assets/images/dish/5.png" alt="" />
+                                        </div>
+                                        <div class="dish-title">
+                                            <h3 class="h3-title">Bread Boiled Egg</h3>
+                                            <p>120 calories</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <div class="wrapper-1">
+            <span class="icon-close-1">
+                <ion-icon name="close"></ion-icon>
+            </span>
+            <div class="form-box add-new-meal">
+                <h2>Custom a new meal</h2>
+                <h:form id="mealForm">
+                    <div class="input-box-name">
+                        <p:inputText id="MealName" value="#{bean.mealName}" autocomplete="off" />
+                        <p:outputLabel for="MealName" value="Meal Name" />
+                    </div>
+        
+                    <div id="ingredientsContainer">
+                        <div class="ingredient-row">
+                            <div>
+                                <div class="input-box-ingredient-name">
+                                    <p:inputText id="ingredientName1" value="#{bean.ingredientName}" styleClass="ingredient-name" required="true" />
+                                    <p:outputLabel for="ingredientName1" value="Ingredient" />
+                                </div>
+                                <div class="result-box">
+                                </div>
+                            </div>
+                            <div class="input-box-quantity">
+                                <p:inputText id="ingredientQuantity1" value="#{bean.ingredientQuantity}" styleClass="ingredient-quantity" required="true" />
+                                <p:outputLabel for="ingredientQuantity1" value="Quantity (g)" />
+                            </div>
+                            <div class="calories-column">
+                                <p:inputText id="calories2" styleClass="calories" value="#{bean.calories}" readonly="true" />
+                                <p:outputLabel for="calories2" value="Calories" />
+                            </div>
+                        </div>
+                        <div class="ingredient-row">
+                            <div>
+                                <div class="input-box-ingredient-name">
+                                    <p:inputText id="ingredientName2" value="#{bean.ingredientName}" styleClass="ingredient-name" required="true" />
+                                    <p:outputLabel for="ingredientName2" value="Ingredient" />
+                                </div>
+                                <div class="result-box">
+                                </div>
+                            </div>
+                            <div class="input-box-quantity">
+                                <p:inputText id="ingredientQuantity2" value="#{bean.ingredientQuantity}" styleClass="ingredient-quantity" required="true" />
+                                <p:outputLabel for="ingredientQuantity2" value="Quantity (g)" />
+                            </div>
+                            <div class="calories-column">
+                                <p:inputText id="calories1" styleClass="calories" value="#{bean.calories}" readonly="true" />
+                                <p:outputLabel for="calories1" value="Calories" />
+                            </div>
+                        </div>
+                    </div>
+        
+                    <p:commandButton class="dish-add-btn" value="Add Ingredient" onclick="addIngredient()" />
+                    <p:commandButton class="dish-add-btn" value="Remove Last Ingredient" onclick="removeLastIngredient()" />
+
+                    <hr class="separator" />
+                    <span class="total-calories"></span>
+                    <p:commandButton type="submit" class="dish-add-btn submit-button" value="Submit" action="#{bean.submit}" />
+                </h:form>
+            </div>
+        </div>
+        <div class="wrapper-2">
+            <span class="icon-close-2">
+                <ion-icon name="close"></ion-icon>
+            </span>
+            <div class="form-box add-default-meal">
+                <h2>Choose from our meals</h2>
+                <h:form id="DefaultMealForm">
+                    <div class="input-box-name">
+                        <p:inputText id="ourMealName" value="#{bean.ourMealName}" autocomplete="off" />
+                        <p:outputLabel for="ourMealName" value="Meal Name" />
+                    </div>
+                    <div class="result-box-recepe">
+                    </div>
+
+                    <span class="total-calories total-calories-recipe" data-calories=""></span>
+                    <p:commandButton type="submit" class="dish-add-btn submit-button" value="Submit" action="#{bean.submit}" />
+                </h:form>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <!-- jquery  -->
+    <script src="/JSFjack/static/css/assets/js/jquery-3.5.1.min.js"></script>
+    <!-- bootstrap -->
+    <script src="/JSFjack/static/css/assets/js/bootstrap.min.js"></script>
+    <script src="/JSFjack/static/css/assets/js/popper.min.js"></script>
+
+    <!-- fontawesome  -->
+    <script src="/JSFjack/static/css/assets/js/font-awesome.min.js"></script>
+
+    <!-- swiper slider  -->
+    <script src="/JSFjack/static/css/assets/js/swiper-bundle.min.js"></script>
+
+    <!-- mixitup filter  -->
+    <script src="/JSFjack/static/css/assets/js/jquery.mixitup.min.js"></script>
+
+    <!-- fancy box  -->
+    <script src="/JSFjack/static/css/assets/js/jquery.fancybox.min.js"></script>
+
+    <!-- parallax  -->
+    <script src="/JSFjack/static/css/assets/js/parallax.min.js"></script>
+
+    <!-- gsap  -->
+    <script src="/JSFjack/static/css/assets/js/gsap.min.js"></script>
+
+    <!-- scroll trigger  -->
+    <script src="/JSFjack/static/css/assets/js/ScrollTrigger.min.js"></script>
+    <!-- scroll to plugin  -->
+    <script src="/JSFjack/static/css/assets/js/ScrollToPlugin.min.js"></script>
+    <!-- rellax  -->
+    <!-- <script src="assets/js/rellax.min.js"></script> -->
+    <!-- <script src="assets/js/rellax-custom.js"></script> -->
+    <!-- smooth scroll  -->
+    <script src="/JSFjack/static/css/assets/js/smooth-scroll.js"></script>
+    <!-- custom js  -->
+    <script src="/JSFjack/static/css/assets/main.js"></script>
+
+</h:body>
+
+</html>

@@ -1,0 +1,192 @@
+*{
+	margin:0;
+	padding:0;
+	color:#1F1717;
+	box-sizing: border-box;
+}
+
+.dashbord-container{
+	position: relative;
+	width:100%;
+	z-index:1;
+}
+
+.side-bar{
+	position: fixed ;
+	height : 100vh;
+	width : 100px;
+	display:flex;
+	align-items:center;
+	z-index:5;
+	left:0;
+	
+}
+
+.side-bar .bar-inner{
+	background-color:#CE5A67;
+	width:80px;
+	height:97vh;
+	display:flex;
+	align-items:center;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+.side-bar .bar-inner .bar-outer{
+	display:flex;
+	justify-content:center;
+	background-color:#1F1717;
+	width:75px;
+	height:96vh;
+	border-top-right-radius: 30px;
+	border-bottom-right-radius: 30px;
+}
+
+.side-bar .pi{
+	color:#FCF5ED; 
+	font-size:1rem;
+	cursor : pointer;
+	padding:10px;
+	transition:0.07s;
+}
+
+.side-bar .pi:hover{
+	opacity:.7;
+	transition:0.1s
+}
+
+.side-bar .bar-inner .bar-outer .bar-content{
+	display:flex;
+	flex-direction:column;
+	justify-content: space-between;
+	padding:25px 0px
+}
+
+.side-bar .bar-inner .bar-outer .bar-content .menu-container{
+	display:flex;
+	flex-direction : column ; 
+}
+
+.side-bar .bar-inner .bar-outer .bar-content .menu-container .pi{
+	margin : 5px 0px;
+}
+
+
+.dashbord-navbar{
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	padding-left:100px;	
+	height:100px;
+	padding-top:20px;
+	z-index:9;
+	padding-right:25px;
+}
+
+.main-dashbord{
+	position:absolute ;
+	width:100%;
+	left:0;
+	top:0;
+	padding-left:100px;
+	background-color:#FCF5ED;
+	padding-right:20px;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 10px;
+	grid-auto-rows: minmax(450px, auto);
+	padding-top:130px;
+}
+
+
+.main-dashbord > div{
+	border-radius: 30px !important;
+}
+
+.main-dashbord .objectif-dashbord{
+	grid-column: 1 / 2;
+	
+}
+
+
+
+
+.purpose-dashbord .circulare-progress-barre .progress-barre-container .progress-barre-outer{
+	height:300px;
+	width:300px;
+	border-radius:50%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.purpose-dashbord .circulare-progress-barre .progress-barre-container .progress-barre-outer .progress-barre-inner{
+	height:250px;
+	width:250px;
+	border-radius:50%;
+	background-color:#f8f9fa;
+	
+}
+
+
+
+.main-dashbord .calory-badge{
+	width:85px;
+	height:85px;
+	border-radius:100%;
+	background-color:#F4BF96;
+}
+
+
+
+.calories-dashbord .daily-recap{
+	display:flex;
+	gap : 30px;
+}
+
+
+
+
+.progress-barre .chart-inner{
+	width:100%;
+	height:10px;
+	background-color: #c0c0c0;;
+	border-radius:100px;
+	position:relative;
+}
+
+.progress-barre .chart-inner .chart-outer{
+	position:absolute;
+	top:0;
+	left:0;
+	width:50%;
+	height:10px;
+	background-color:#1F1717;
+	border-radius:100px;
+}
+
+
+
+
+/* for user.xhtml */
+
+.input-container input{
+	width: 80%;
+}
+.birthday input{
+	width:90%!important;
+}
+
+.group-input{
+	width:100%;
+}
+
+.group-input .input-container{
+	width:50%;
+}
+
+
+
+
+

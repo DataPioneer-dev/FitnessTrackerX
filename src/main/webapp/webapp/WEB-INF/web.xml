@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
+  <display-name>FoodBroo</display-name>
+	<servlet>
+        <servlet-name>FacesServlet</servlet-name>
+        <servlet-class>
+            jakarta.faces.webapp.FacesServlet
+        </servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>FacesServlet</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>FacesServlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
+    </servlet-mapping>
+       <servlet-mapping>
+        <servlet-name>FacesServlet</servlet-name>
+        <url-pattern>*.faces</url-pattern>
+    </servlet-mapping>
+     <!-- Filter section -->
+     <!-- first filter  the order of the filters based on the order in web.xml file--> 
+     <filter>
+        <filter-name>InvalidLinkFilter</filter-name>
+        <filter-class>utils.filter.InvalidLinkFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>InvalidLinkFilter</filter-name>
+        <url-pattern>/eng/*</url-pattern> 
+    </filter-mapping>
+     
+    <!-- second filter --> 
+    <filter>
+	    <filter-name>AuthenticationFilter</filter-name>
+	    <filter-class>utils.filter.AuthenticationFilter</filter-class>
+	</filter>
+	
+	
+	<filter-mapping>
+	    <filter-name>AuthenticationFilter</filter-name>
+	    <url-pattern>/eng/user/*</url-pattern> 
+	</filter-mapping>
+	
+	<!-- third filter -->
+	
+	<filter>
+        <filter-name>HomePageFilter</filter-name>
+        <filter-class>utils.filter.HomePageFilter</filter-class>
+    </filter>
+    
+    <filter-mapping>
+        <filter-name>HomePageFilter</filter-name>
+        <url-pattern>/eng/home.xhtml</url-pattern> 
+    </filter-mapping>
+    
+    <filter-mapping>
+        <filter-name>HomePageFilter</filter-name>
+        <url-pattern>/eng/register.xhtml</url-pattern> 
+    </filter-mapping>
+    
+    
+	
+	 
+</web-app>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html
+ xmlns:faces="jakarta.faces"
+        xmlns:ui="jakarta.faces.facelets"
+        xmlns:f="jakarta.faces.core"
+        xmlns:h="jakarta.faces.html"
+        xmlns:c="jakarta.tags.core"
+        xmlns:fn="jakarta.tags.functions"
+        xmlns:p="http://primefaces.org/ui"
+  	 > 
+
+<h:head>
+    <meta charset="UTF-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" ></meta>
+    <title>FoodBro</title>
+    <link rel="stylesheet" href="/JSFjack/static/css/HomePage_style.css" ></link>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' ></link>
+</h:head>
+
+<h:body>
+
+    <header>
+        <h2 class="logo">FoodBro</h2>
+        <nav class="navigation">
+            <a href="#" class="home">Home</a>
+            <a href="#">Challenges</a>
+            <a href="#">Blog</a>
+            <a href="#">About</a>
+            <button class="btnLogin-popup">Login</button>
+        </nav>
+    </header>
+
+
+    <div class="wrapper">
+        <span class="icon-close">
+            <ion-icon name="close"></ion-icon>
+        </span>
+
+        <div class="form-box login">
+            <h2>Login</h2>
+            <h:form method="post">
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="username"></ion-icon>
+                    </span>
+                    <p:inputText id="float-input" styleClass="custom-input" value="#{user.user.username}" required="true" style="border:none" />
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock"></ion-icon>
+                    </span>
+                    <p:password id="password" styleClass="" value="#{user.password}" required="true" style="border:none" />
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox" /> Remember me
+                    </label>
+                    <a href="#">Forgot password ?</a>
+                </div>
+                <p:commandButton  value="Submit" action="#{user.submitLogin}" styleClass="btn" style="background-color:green;border:none"/>
+                <div class="login-register">
+                    <p>Don't have an account ? <a href="#" class="register-link">Register</a></p>
+                </div>
+            </h:form>
+        </div>
+
+        <div class="form-box register">
+            <h2>Register</h2>
+            <h:form method="post" >
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="person"></ion-icon>
+                    </span>
+                    <p:inputText id="username" value="#{user.user.username}" required="true" />
+                    <label>Username</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="email"></ion-icon>
+                    </span>
+                    <p:inputText id="mail" type="email" value="#{user.user.email}" required="true" />
+                    <label>Email</label>
+                </div>
+                <div class="input-box">
+                    <span class="icon">
+                        <ion-icon name="lock"></ion-icon>
+                    </span>
+                    <p:password id="password" value="#{user.password}" required="true" />
+                    <label>Password</label>
+                </div>
+                <div class="remember-forgot">
+                    <label>
+                        <input type="checkbox" required="true" /> I agree to terms and conditions
+                    </label>
+                </div>
+                <p:commandButton  value="Register" action="#{user.submitRegisterHomePage}" styleClass="btn" style="background-color:green;border:none"/>
+                <div class="login-register">
+                    <p>Already have an account ? <a href="#" class="login-link">Login</a></p>
+                </div>
+            </h:form>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h1>Greet your FoodBro !</h1>
+            <p>Elevate your dining experience with personalized meal tracking and goal-based suggestions. Explore, savor, and conquer your culinary objectives effortlessly. Welcome to a tasteful journey with FoodBro !</p>
+            <a href="#" class="home_btn" id="registerNowBtn">Register Now</a>
+        </div>
+
+        <div class="col">
+            <div class="card card1">
+                <h3>Meal Suggestions</h3>
+            </div>
+            <div class="card card2">
+                <h3>Food Tracker</h3>
+            </div>
+            <div class="card card3">
+                <h3>Set your Goal</h3>
+            </div>
+            <div class="card card4">
+                <h3>Challenge your friends</h3>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="/JSFjack/static/js/HomePage_script.js"></script>
+    <script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</h:body>
+</html>

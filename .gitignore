@@ -1,0 +1,31 @@
+# Compiled bytecode
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# IDE-specific files
+.settings/
+.idea/
+
+# Compiled files
+target/
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.tmp.*
+*.log
+*.swp
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+
+# config file 
+config.properties

@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html
+ xmlns:faces="jakarta.faces"
+        xmlns:ui="jakarta.faces.facelets"
+        xmlns:f="jakarta.faces.core"
+        xmlns:h="jakarta.faces.html"
+        xmlns:c="jakarta.tags.core"
+        xmlns:fn="jakarta.tags.functions"
+        xmlns:p="http://primefaces.org/ui"
+  	 > 
+
+<h:head>
+
+<style>
+	*{
+		font-family: 'Poppins', sans-serif;
+		font-family: 'Roboto', sans-serif;
+	}
+	.card{
+		display: flex;
+	    width: 100%;
+	    height: 90vh;
+	    justify-content: center;
+	    align-items: center;
+	}
+	.m{
+		margin : 20px 0;
+	}
+	
+	h2{
+		text-align:center;
+	}
+	button.ui-button {
+        margin-right: .5rem;
+    }
+	
+</style>
+	
+
+</h:head> 
+
+<h:body>
+
+	<div class="card">
+	    <h:form method="post" >
+	        <h2>Authentification</h2>
+	        
+	        <span class="ui-float-label m">
+		       <p:inputText id="float-input" value="#{user.login}"/>
+		       <p:outputLabel for="@previous" value="Login"/>
+		    </span>
+	        
+	        <span class="ui-float-label m">
+	        	<p:password id="nonFeedback" value="#{user.password}"/>
+	        	<p:outputLabel for="@previous" value="Password"/>
+	        </span>
+	        
+	     	<div class="m " style="text-align:center">
+	        	<p:commandButton  value="Submit" action="#{user.submitLogin}" styleClass="rounded-button ui-button-success"/>
+	        </div>
+	    </h:form>
+	</div>
+	
+</h:body>
+
+
+</html>

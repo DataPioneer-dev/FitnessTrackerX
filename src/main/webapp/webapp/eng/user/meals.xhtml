@@ -1,0 +1,103 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html
+ xmlns:faces="jakarta.faces"
+        xmlns:ui="jakarta.faces.facelets"
+        xmlns:f="jakarta.faces.core"
+        xmlns:h="jakarta.faces.html"
+        xmlns:c="jakarta.tags.core"
+        xmlns:fn="jakarta.tags.functions"
+        xmlns:p="http://primefaces.org/ui"
+  	 > 
+
+<h:head>
+	<link rel="stylesheet" type="text/css" href="/JSFjack/static/css/style.css"></link> 
+	<meta charset="utf-8"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
+    
+</h:head> 
+
+<h:body>
+	<div class="dashbord-container">
+		<!-- Side barre -->
+		<div class="side-bar">
+			<div class="bar-inner shadow">
+				<div class="bar-outer ">
+					<div class="bar-content">
+						<div class="logo-container">
+							<i class="pi pi-sign-out"></i>
+						</div>
+						<div class="menu-container">
+							<a href="dashbord.xhtml">	
+								<i class="pi pi-home"></i>
+							</a>
+							<a href="meals.xhtml">	
+								<i class="pi pi-list"></i>
+							</a>
+							
+							<a href="exercice.xhtml">	
+								<i class="pi pi-sort-amount-up-alt"></i>
+							</a>
+							
+							<a href="user.xhtml">	
+								<i class="pi pi-user"></i>
+							</a>
+							
+							
+							
+						</div>
+					
+						<div class="logout-container">
+							 <p:commandButton type="button" action="#{user.submitLogout}" icon="pi pi-sign-out" styleClass="rounded-button ui-button-secondary ui-button-flat" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end side barre -->	
+		
+		<!-- top navbar -->
+		<div class="dashbord-navbar">
+			<div class="d-flex justify-content-between">
+				<div class="">
+					<h1>
+						Hello #{user.nom} #{user.prenom} ,
+					</h1>
+					
+					<p class="fs-5 fw-medium text-secondary">
+						Lets start living healthy from now on !
+					</p>
+				</div>
+				<div class="">
+					<span class="currente-date text-center fs-4 fw-medium"></span>
+					<p class="fs-5 fw-medium text-secondary">
+						Remaining days : #{user.remainingDates}
+					</p>
+				</div>
+			</div>
+		</div>
+		<!-- end top navbar -->
+		
+		<!-- dashbord items -->
+		
+		
+	</div>
+	
+	
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"></link>
+<script>
+	var currentDate = new Date();
+	
+	var currentYear = currentDate.getFullYear();
+	var currentMonth = currentDate.getMonth() + 1; 
+	var currentDay = currentDate.getDate();
+
+	var _currentDate = currentYear + "-" + currentMonth + "-" + currentDay;
+	document.querySelector(".currente-date").innerHTML = _currentDate
+	
+	
+</script>
+</h:body>
+
+
+</html>
